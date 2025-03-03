@@ -40,7 +40,7 @@ async function main() {
 
   score = await questionHandler(qOne, "C", score);
   score = await questionHandler(qTwo, "B", score);
-
+  // add more questions
   printResult(score);
   rl.close();
 }
