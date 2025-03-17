@@ -32,7 +32,7 @@ async function questionHandler(question, correctAnswer, score) {
   while (true) {
     const response = await askQuestion(question);
     if (["A", "B", "C", "D"].includes(response)) {
-      if (question == qTen) {
+      if (question == qTen && response != "D") {
         score += 1;
       }
 
@@ -56,7 +56,7 @@ async function questionHandler(question, correctAnswer, score) {
 
 async function main() {
   let score = 0;
-
+  inCorrectanswer = [];
   score = await questionHandler(qOne, "C", score);
   score = await questionHandler(qTwo, "B", score);
   score = await questionHandler(qThree, "B", score);
