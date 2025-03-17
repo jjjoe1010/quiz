@@ -21,6 +21,8 @@ let qNine =
 let qTen =
   "Question 10: What is the most despised class in WoW?\nA: Feral Druid\nB: Feral Druid\nC: Feral Druid\nD: All of the Above\n";
 
+let inCorrectanswer = [];
+
 function askQuestion(question) {
   const answer = prompt(question);
   return answer.toUpperCase();
@@ -29,7 +31,6 @@ function askQuestion(question) {
 async function questionHandler(question, correctAnswer, score) {
   while (true) {
     const response = await askQuestion(question);
-
     if (["A", "B", "C", "D"].includes(response)) {
       if (question == qTen) {
         score += 1;
@@ -37,8 +38,15 @@ async function questionHandler(question, correctAnswer, score) {
 
       if (response === correctAnswer) {
         score += 1;
+      } else {
+        if (question != qTen) {
+          inCorrectanswer.push({
+            question: question,
+            userAnswer: response,
+            correctAnswer: correctAnswer,
+          });
+        }
       }
-
       return score;
     } else {
       console.log("Error: Please enter A, B, C, or D.");
@@ -63,6 +71,17 @@ async function main() {
 }
 
 function printResult(score) {
+  if (inCorrectanswer.length > 0) {
+    for (let i = 0; i < inCorrectanswer.length; i++) {
+      console.log(
+        `Incorrect ${
+          inCorrectanswer[i].question.split("\n")[0]
+        }, your answer was ${
+          inCorrectanswer[i].userAnswer
+        }, correct answer is ${inCorrectanswer[i].correctAnswer}`
+      );
+    }
+  }
   if (score >= 6) {
     console.log(`Well Done! You scored ${score}/10.`);
   } else {
