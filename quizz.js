@@ -1,12 +1,5 @@
 console.log("Welcome to Jason's Wow Quiz!");
 
-const readline = require("readline");
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
 let qOne =
   "Question 1: What is the current expansion we are playing on WoW?\nA: Shadowlands\nB: Pandaria\nC: The War Within\nD: Dragonflight\n";
 let qTwo =
@@ -29,11 +22,8 @@ let qTen =
   "Question 10: What is the most despised class in wow?\nA: Feral Druid\nB: Feral Druid\nC: Feral Druid\nD: All of the Above\n";
 
 function askQuestion(question) {
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => {
-      resolve(answer.toUpperCase());
-    });
-  });
+  const answer = prompt(question);
+  return answer.toUpperCase();
 }
 
 async function questionHandler(question, correctAnswer, score) {
@@ -65,7 +55,6 @@ async function main() {
   score = await questionHandler(qNine, "C", score);
   score = await questionHandler(qTen, "D", score);
   printResult(score);
-  rl.close();
 }
 
 function printResult(score) {
@@ -75,6 +64,18 @@ function printResult(score) {
     console.log(
       `Ha Ha Ha... ${score}/10. Maybe you should leave the server...`
     );
+  }
+  playAgain();
+}
+
+function playAgain() {
+  const response = askQuestion("Would you like to try again? (Y/N)");
+  if (response === "Y") {
+    main();
+  } else if (response === "N") {
+    Deno.exit();
+  } else {
+    playAgain();
   }
 }
 
