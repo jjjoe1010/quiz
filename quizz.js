@@ -15,11 +15,11 @@ let qSix =
 let qSeven =
   "Question 7: What is the raid dungeon name this patch?\nA: Liberation of Undermine\nB: Dragon Soul\nC: Siege of Orgrimmar\nD: Nerub-ar Palace\n";
 let qEight =
-  "Question 8: What is Zushi(Laurenzo) bad at?\nA: Coding\nB: Doing Stone Vault Dungeon\nC: Aiming in fps games\nD: Wooing Izzy(his gf)\n";
+  "Question 8: What is Zushi (Laurenzo) bad at?\nA: Coding\nB: Doing Stone Vault Dungeon\nC: Aiming in fps games\nD: Wooing Izzy(his gf)\n";
 let qNine =
   "Question 9: Who is known for taking frontals in the Discord server 'Team Deplete'?\nA: Labyrinth (Jason)\nB: Loee (Adam)\nC: Jazz\nD: Zushi (Laurenzo)\n";
 let qTen =
-  "Question 10: What is the most despised class in wow?\nA: Feral Druid\nB: Feral Druid\nC: Feral Druid\nD: All of the Above\n";
+  "Question 10: What is the most despised class in WoW?\nA: Feral Druid\nB: Feral Druid\nC: Feral Druid\nD: All of the Above\n";
 
 function askQuestion(question) {
   const answer = prompt(question);
