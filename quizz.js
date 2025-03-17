@@ -7,7 +7,7 @@ let qTwo =
 let qThree =
   "Question 3: What day of the week does the vault resets?\nA: Monday\nB: Wednesday\nC: Friday\nD: Sunday\n";
 let qFour =
-  "Question 4: Which one is the highest gear level?\nA: Mythic\nB: Hero\nC: Adventur\nD: Veteran\n";
+  "Question 4: Which one is the highest gear level?\nA: Mythic\nB: Hero\nC: Adventurer\nD: Veteran\n";
 let qFive =
   "Question 5: Who became the leader after... fucking... uhm.... Garrosh Hellscream? (Quote from Boncer)\nA: Rexxar\nB: Sen'Jin\nC: General Grebo\nD: Vol'Jin\n";
 let qSix =
@@ -15,9 +15,9 @@ let qSix =
 let qSeven =
   "Question 7: What is the raid dungeon name this patch?\nA: Liberation of Undermine\nB: Dragon Soul\nC: Siege of Orgrimmar\nD: Nerub-ar Palace\n";
 let qEight =
-  "Question 8: What is Zushi(Laurenzo) bad at?\nA: Coding\nB: Doing Stone Vault Dungeon\nC: Aiming in fps games\nD: Wooing Izzie(his gf)\n";
+  "Question 8: What is Zushi(Laurenzo) bad at?\nA: Coding\nB: Doing Stone Vault Dungeon\nC: Aiming in fps games\nD: Wooing Izzy(his gf)\n";
 let qNine =
-  "Question 9: Who is known for like taking frontals in the Discord server 'Team Deplete'?\nA: Labyrinth (Jason)\nB: Loee (Adam)\nC: Jazz\nD: Zushi (Laurenzo)\n";
+  "Question 9: Who is known for taking frontals in the Discord server 'Team Deplete'?\nA: Labyrinth (Jason)\nB: Loee (Adam)\nC: Jazz\nD: Zushi (Laurenzo)\n";
 let qTen =
   "Question 10: What is the most despised class in wow?\nA: Feral Druid\nB: Feral Druid\nC: Feral Druid\nD: All of the Above\n";
 
@@ -31,9 +31,14 @@ async function questionHandler(question, correctAnswer, score) {
     const response = await askQuestion(question);
 
     if (["A", "B", "C", "D"].includes(response)) {
+      if (question == qTen) {
+        score += 1;
+      }
+
       if (response === correctAnswer) {
         score += 1;
       }
+
       return score;
     } else {
       console.log("Error: Please enter A, B, C, or D.");
