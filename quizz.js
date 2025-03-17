@@ -13,9 +13,9 @@ let qFive =
 let qSix =
   "Question 6: How many specs did Druid get?\nA: One\nB: Two\nC: Three\nD: Four\n";
 let qSeven =
-  "Question 7: what is the raid dungeon name this patch?\nA: Liberation of Umdermine\nB: Dragon Soul\nC: Siege of Orgrimmar\nD: Nerub-ar Palace\n";
+  "Question 7: What is the raid dungeon name this patch?\nA: Liberation of Undermine\nB: Dragon Soul\nC: Siege of Orgrimmar\nD: Nerub-ar Palace\n";
 let qEight =
-  "Question 8: What is Zushi(Laurenzo) bad at?\nA: Coding\nB: doing Stone Vault Dungeon\nC: aiming in fps games\nD: wooing Izzie(his gf)\n";
+  "Question 8: What is Zushi(Laurenzo) bad at?\nA: Coding\nB: Doing Stone Vault Dungeon\nC: Aiming in fps games\nD: Wooing Izzie(his gf)\n";
 let qNine =
   "Question 9: Who is known for like taking frontals in the Discord server 'Team Deplete'?\nA: Labyrinth (Jason)\nB: Loee (Adam)\nC: Jazz\nD: Zushi (Laurenzo)\n";
 let qTen =
